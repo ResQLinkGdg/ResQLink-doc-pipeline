@@ -22,13 +22,14 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Build outputs (있으면)
+# Build outputs
 build/
 dist/
 *.egg-info/
 
-# Large binary embeddings
-pack/**/embeddings*.bin
+# Docpack artifacts (release로만 배포)
+pack/
+pack.zip
 
-# (선택) 원본 PDF는 보통 깃에 안 올림
+# (선택) 원본 PDF
 input/pdf/

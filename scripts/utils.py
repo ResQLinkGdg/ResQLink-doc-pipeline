@@ -85,9 +85,14 @@ def remove_repeating_headers_footers(
     return cleaned
 
 def safe_doc_id_from_filename(path: str | Path) -> str:
-    stem = Path(path).stem
-    stem = re.sub(r"[^A-Za-z0-9_-]+", "_", stem)
-    return stem[:80] if len(stem) > 80 else stem
+    orig = Path(path).stem  # 원본(한글 포함)
+    safe = re.sub(r"[^A-Za-z0-9_-]+", "_", orig).strip("_")
+    if not safe:
+        safe = "doc"
+    h = hashlib.sha256(orig.encode("utf-8")).hexdigest()[:8]
+    base = safe[:71]  # 71 + 1 + 8 = 80
+    return f"{base}_{h}"
+
 
 def looks_like_heading(line: str) -> bool:
     if not line:

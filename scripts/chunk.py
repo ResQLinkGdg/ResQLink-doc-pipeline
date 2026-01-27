@@ -83,6 +83,8 @@ def chunk_pages(
                         "pageEnd": page_no,
                         "content": part
                     })
+                if end == len(addition):
+                    break
                 start = end - overlap if overlap > 0 else end
             buf = ""
             buf_start_page = None
@@ -112,12 +114,17 @@ def main() -> None:
     ap.add_argument("--min_chars", type=int, default=250)
     args = ap.parse_args()
 
+    if args.overlap >= args.chunk_size:
+        raise SystemExit("overlap must be < chunk_size (otherwise hard-slicing can loop forever)")
+
+
     by_doc: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for row in read_jsonl(args.input):
         by_doc[row["docId"]].append(row)
 
     all_chunks: List[Dict[str, Any]] = []
-    for _, pages in tqdm(by_doc.items(), desc="chunk"):
+    for doc_id, pages in tqdm(by_doc.items(), desc="chunk"):
+        print(f"[chunk] doc={doc_id}, pages={len(pages)}")
         all_chunks.extend(chunk_pages(pages, args.chunk_size, args.overlap, args.min_chars))
 
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
