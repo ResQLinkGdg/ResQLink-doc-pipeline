@@ -1,0 +1,8 @@
+{
+  "dtype": "f16",
+  "dim": 0,
+  "count": 0,
+  "normalized": false,
+  "model": "",
+  "order": "chunks.jsonl line order"
+}

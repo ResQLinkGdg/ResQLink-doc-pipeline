@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+.venv/
+venv/
+.env
+
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.cache/
+
+# Intermediate artifacts
+work/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Build outputs (있으면)
+build/
+dist/
+*.egg-info/
+
+# Large binary embeddings
+pack/**/embeddings*.bin
+
+# (선택) 원본 PDF는 보통 깃에 안 올림
+input/pdf/

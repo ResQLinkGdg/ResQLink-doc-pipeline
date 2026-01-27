@@ -1,0 +1,8 @@
+{
+  "packId": "firstaid_kr_v1",
+  "version": "v1",
+  "createdAt": "",
+  "embedding": { "model": "", "dim": 0, "dtype": "f16", "normalized": false },
+  "chunking": { "chunkSize": 650, "overlap": 120, "minChars": 250 },
+  "docs": []
+}
