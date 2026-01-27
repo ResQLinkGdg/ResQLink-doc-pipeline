@@ -1,6 +1,6 @@
 # DOCPACK (Offline RAG Document Pack Builder)
 
-공식 PDF(텍스트 PDF)를 **오프라인 RAG용 문서팩(docpack)**으로 변환하는 파이프라인입니다.
+공식 PDF(텍스트 PDF)를 **오프라인 RAG용 문서팩(docpack)** 으로 변환하는 파이프라인입니다.
 
 ## 폴더 구조
 - `input/pdf/` : 원본 PDF 넣는 곳
