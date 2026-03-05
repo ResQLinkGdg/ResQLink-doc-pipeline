@@ -33,3 +33,6 @@ pack.zip
 
 # (선택) 원본 PDF
 input/pdf/
+
+# Models (용량이 커서 git에 안 올림)
+models/

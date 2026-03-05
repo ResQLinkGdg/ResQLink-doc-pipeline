@@ -1,0 +1,8 @@
+# Docker (Linux x86_64) 전용 의존성
+pdfplumber>=0.11.4
+pypdf>=5.1.0
+tqdm>=4.66.0
+numpy>=1.26.0
+
+# TFLite embedding (USE-QA .tflite)
+tflite-support==0.4.4

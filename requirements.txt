@@ -1,10 +1,13 @@
-# DOCPACK pipeline dependencies
-# NOTE: sentence-transformers 모델은 최초 실행 시 다운로드가 필요할 수 있음(인터넷).
-# 오프라인 환경이면 미리 모델 캐시를 만들어 두면 됨.
+# DOCPACK pipeline dependencies (USE TFLite)
 
 pdfplumber>=0.11.4
 pypdf>=5.1.0
 tqdm>=4.66.0
 numpy>=1.26.0
-sentence-transformers>=3.0.0
-torch>=2.1.0
+
+# Embedding runtime:
+# - recommended (cross-platform): tensorflow
+tensorflow>=2.20.0
+
+# OPTIONAL (lighter runtime; may not be available on all OS):
+# tflite-runtime>=2.14.0

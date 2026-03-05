@@ -101,7 +101,14 @@ def main() -> None:
     ap.add_argument("--pack_id", required=True)
     ap.add_argument("--pack_version", default="v1")
     ap.add_argument("--source", default="UNKNOWN")
-    ap.add_argument("--embed_model", required=True)
+
+    ap.add_argument(
+        "--embed_model",
+        default="universal_sentence_encoder.tflite",
+        help="Embedding model path. Default: universal_sentence_encoder.tflite"
+    )
+    ap.add_argument("--num_threads", type=int, default=4, help="TFLite interpreter threads (default: 4)")
+
     ap.add_argument("--chunk_size", type=int, default=650)
     ap.add_argument("--overlap", type=int, default=120)
     ap.add_argument("--min_chars", type=int, default=250)
@@ -146,6 +153,7 @@ def main() -> None:
             "--out_meta", str(out_meta),
             "--model", args.embed_model,
             "--batch_size", str(args.batch_size),
+            "--num_threads", str(args.num_threads),
         ]
         if args.normalize:
             embed_argv.append("--normalize")

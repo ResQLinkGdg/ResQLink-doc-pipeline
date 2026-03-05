@@ -1,8 +1,12 @@
 {
   "dtype": "f16",
-  "dim": 0,
-  "count": 0,
+  "dim": 384,
+  "count": 932,
   "normalized": false,
-  "model": "",
-  "order": "chunks.jsonl line order"
+  "model": "intfloat/multilingual-e5-small",
+  "order": "chunks.jsonl line order",
+  "fileSize": 715776,
+  "expectedFileSize": 715776,
+  "sha256": "8349f8968f2f2d659fa47a2259bce0b1aa56761059c4b85c8b2ae23fce099834",
+  "fileSizeOk": true
 }
